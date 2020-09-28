@@ -1,10 +1,14 @@
 # code your #valid_move? method here
 
-def valiate_move(board, index)
-  if position_taken?(board, index) && index.between?(0, 8)
-    puts "Position Taken"
-  else
-    
+def position_taken?(board, pos)
+  return true if board[pos + 1] == 'X' || board[pos + 1] == 'O'
+  false
+end
+puts position_taken?(board, 4)
+
+def valid_move? (board, index)
+  return true if !position_taken?(board, index) && index.between?(0, 8)
+  false
 end
 
 
